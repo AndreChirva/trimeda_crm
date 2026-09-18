@@ -1,7 +1,8 @@
 -- ==========================================
--- КЛИЕНТЫ
+-- 02. КЛИЕНТЫ
 -- ==========================================
 
+-- Клиенты
 CREATE TABLE tm_clients (
     id              BIGINT IDENTITY(1,1) PRIMARY KEY,
     tenant_id       BIGINT NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE tm_clients (
     deleted_at      DATETIME2
 );
 
+-- Контакты клиента (ЛПР)
 CREATE TABLE tm_client_contacts (
     id              BIGINT IDENTITY(1,1) PRIMARY KEY,
     client_id       BIGINT NOT NULL,
@@ -41,6 +43,7 @@ CREATE TABLE tm_client_contacts (
     created_at      DATETIME2 DEFAULT GETDATE()
 );
 
+-- Брифы клиента
 CREATE TABLE tm_client_briefs (
     id                  BIGINT IDENTITY(1,1) PRIMARY KEY,
     tenant_id           BIGINT NOT NULL,

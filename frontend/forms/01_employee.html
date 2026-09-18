@@ -1,0 +1,83 @@
+<!-- ==========================================
+     ФОРМА: Создание/редактирование сотрудника
+     ========================================== -->
+<div class="crm-custom-card-body">
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Имя сотрудника <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-firstName}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Фамилия сотрудника <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-lastName}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Телефон сотрудника <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-phone-alt"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-phone}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Пароль для сотрудника <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-key"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-password}</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="crm-button-center-container">
+    {form-button}
+</div>
+
+
+<!-- ==========================================
+     ФОРМА: Изменение статуса сотрудника
+     ========================================== -->
+<div class="crm-form-title-wrapper">
+    <div class="crm-form-icon">
+        <i class="fas fa-exchange-alt"></i>
+    </div>
+    <h3 class="crm-form-title">Изменение статуса сотрудника</h3>
+    <p class="crm-form-subtitle">Выберите актуальный статус из списка</p>
+</div>
+
+<div class="crm-form-row mb-4">
+    <label class="crm-label-inline">Статус: <span style="color: #ef4444;"></span></label>
+    <div class="crm-input-wrapper-inline">
+        <div class="custom-form-control-wrapper">{colcontrol-status_id}</div>
+    </div>
+</div>
+
+<div class="crm-button-center-container">
+    {form-button}
+</div>
+
+
+<!-- ==========================================
+     ФОРМА: Доступы нового сотрудника
+     ========================================== -->
+<div style="font-family: system-ui, sans-serif; padding: 10px; text-align: left;">
+    <p style="color: #475569; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">
+        Учетная запись сотрудника успешно активирована в базе данных «Ландшафт.Офис».
+        Скопируйте сгенерированные доступы для передачи члену команды:
+    </p>
+    <div style="background: #f8fafc; padding: 18px; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 1.05rem; margin-bottom: 20px; color: #1e293b; line-height: 1.7;">
+        <b>Логин доступа:</b> <span style="font-weight:600; color:#1b5e20;">{colview-login}</span><br>
+        <b>Пароль доступа:</b> <span style="color: #2E7D32; font-weight: 700; font-family: monospace; font-size: 1.15rem; background:#fff; padding:2px 8px; border-radius:4px; border:1px solid #e2e8f0;">123456</span>
+    </div>
+    <div style="color: #94a3b8; font-size: 0.8rem; text-align: center; margin-top: 15px;">
+        Вы можете скопировать текст прямо с экрана. Окно закроется только при нажатии на крестик.
+    </div>
+</div>

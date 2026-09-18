@@ -1,0 +1,118 @@
+<!-- ==========================================
+     ФОРМА: Создание клиента
+     ========================================== -->
+<div class="crm-custom-card-body">
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Фамилия <span style="color:#ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-last_name}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Имя <span style="color:#ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-first_name}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Отчество</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-middle_name}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Телефон <span style="color:#ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-phone-alt"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-phone}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Email</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-envelope"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-email}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Источник</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-tag"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-source}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-3">
+        <label class="crm-label-inline">Адрес</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-map-marker-alt"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-address}</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="crm-button-center-container">
+    {form-button}
+</div>
+
+
+<!-- ==========================================
+     ФОРМА: Просмотр клиента (карточка)
+     ========================================== -->
+<div class="client-card-premium">
+
+    <div class="client-header">
+        <div class="client-avatar">{colview-initials}</div>
+        <div class="client-info">
+            <h2 class="client-name">{colview-last_name} {colview-first_name} {colview-middle_name}</h2>
+            <div class="client-badges">
+                <span class="badge-status badge-active">{colview-status_name}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="client-details">
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="detail-text"><small>Телефон</small><strong>{colview-phone}</strong></div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon"><i class="far fa-envelope"></i></div>
+            <div class="detail-text"><small>Email</small><strong>{colview-email}</strong></div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="detail-text"><small>Адрес</small><strong>{colview-address}</strong></div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="detail-text"><small>Создан</small><strong>{colview-created_at}</strong></div>
+        </div>
+    </div>
+
+    <div class="client-stats">
+        <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Проектов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0 ₽</div>
+            <div class="stat-label">Выручка</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Задач</div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,205 @@
+<!-- ==========================================
+     ФОРМА: Создание проекта
+     ========================================== -->
+<div class="crm-custom-card-body">
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Название проекта <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-tree"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-name}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Клиент <span style="color: #ef4444;">*</span></label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="far fa-user"></i></span>
+            <div class="custom-form-control-wrapper" style="display: flex; gap: 8px; align-items: center;">
+                <div style="flex: 1;">{colcontrol-client_id}</div>
+                <a href="#" class="as-form-modal" data-code="tm_clientForm" data-itemid="0" data-title="Новый клиент" style="height: 42px; padding: 0 16px; display: inline-flex; align-items: center; background: #2E7D32; color: #ffffff; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Адрес объекта</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-map-marker-alt"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-address}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Площадь (соток)</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-ruler"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-area}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Тип проекта</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-tag"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-project_type_id}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Менеджер</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-user-tie"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-manager_id}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Бюджет (₽)</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-ruble-sign"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-budget}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Дата начала</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-calendar"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-start_date}</div>
+        </div>
+    </div>
+
+    <div class="crm-form-row mb-4">
+        <label class="crm-label-inline">Дата окончания</label>
+        <div class="crm-input-wrapper-inline">
+            <span class="crm-input-icon"><i class="fas fa-calendar-check"></i></span>
+            <div class="custom-form-control-wrapper">{colcontrol-end_date}</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="crm-button-center-container">
+    {form-button}
+</div>
+
+
+<!-- ==========================================
+     ФОРМА: Просмотр проекта (карточка)
+     ========================================== -->
+<div class="project-card-premium">
+
+    <div class="project-header">
+        <div class="project-icon">🌿</div>
+        <div class="project-info">
+            <h2 class="project-name">{colview-name}</h2>
+            <div class="project-address"><i class="fas fa-map-marker-alt"></i> {colview-address}</div>
+        </div>
+    </div>
+
+    <div class="project-badges">
+        <span class="badge-status badge-{colview-status_code}">{colview-status_name}</span>
+        <span class="badge-type">📐 {colview-project_type_name}</span>
+    </div>
+
+    <div class="project-progress">
+        <div class="progress-label">Прогресс проекта</div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {colview-progress}%"></div>
+        </div>
+        <div class="progress-value">{colview-progress}%</div>
+    </div>
+
+    <div class="project-section">
+        <div class="section-title">👤 Клиент</div>
+        <div class="person-card">
+            <div class="person-avatar">{colview-client_initials}</div>
+            <div class="person-info">
+                <div class="person-name">{colview-client_name}</div>
+                <div class="person-phone">📞 {colview-client_phone}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <div class="section-title">👔 Менеджер</div>
+        <div class="person-card">
+            <div class="person-avatar person-avatar-purple">{colview-manager_initials}</div>
+            <div class="person-info">
+                <div class="person-name">{colview-manager_name}</div>
+                <div class="person-phone">📞 {colview-manager_phone}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-grid">
+        <div class="grid-item">
+            <div class="grid-icon">💰</div>
+            <div class="grid-label">Бюджет</div>
+            <div class="grid-value">{colview-budget_str} ₽</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-icon">📏</div>
+            <div class="grid-label">Площадь</div>
+            <div class="grid-value">{colview-area} соток</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-icon">📅</div>
+            <div class="grid-label">Начало</div>
+            <div class="grid-value">{colview-start_date_str}</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-icon">🏁</div>
+            <div class="grid-label">Окончание</div>
+            <div class="grid-value">{colview-end_date_str}</div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     ПАНЕЛЬ: Статистика проектов (4 карточки)
+     ========================================== -->
+<div class="crm-stats-grid">
+
+    <div class="crm-stat-card crm-stat-green">
+        <div class="crm-stat-icon-wrap"><i class="fas fa-layer-group"></i></div>
+        <div class="crm-stat-body">
+            <div class="crm-stat-value">{colview-stat_total}</div>
+            <div class="crm-stat-label">Всего проектов</div>
+            <div class="crm-stat-hint">Все объекты студии</div>
+        </div>
+    </div>
+
+    <div class="crm-stat-card crm-stat-blue">
+        <div class="crm-stat-icon-wrap"><i class="fas fa-seedling"></i></div>
+        <div class="crm-stat-body">
+            <div class="crm-stat-value">{colview-stat_new}</div>
+            <div class="crm-stat-label">Новых за 30 дней</div>
+            <div class="crm-stat-hint">Приток клиентов</div>
+        </div>
+    </div>
+
+    <div class="crm-stat-card crm-stat-red">
+        <div class="crm-stat-icon-wrap"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="crm-stat-body">
+            <div class="crm-stat-value">{colview-stat_overdue}</div>
+            <div class="crm-stat-label">Просрочено</div>
+            <div class="crm-stat-hint">Требует контроля</div>
+        </div>
+    </div>
+
+    <div class="crm-stat-card crm-stat-gold">
+        <div class="crm-stat-icon-wrap"><i class="fas fa-coins"></i></div>
+        <div class="crm-stat-body">
+            <div class="crm-stat-value">{colview-stat_budget} ₽</div>
+            <div class="crm-stat-label">Бюджет проектов</div>
+            <div class="crm-stat-hint">Объём в работе</div>
+        </div>
+    </div>
+
+</div>

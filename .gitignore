@@ -1,0 +1,25 @@
+# Системные файлы
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.bak
+
+# Секреты
+*.env
+secrets.txt
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.pyc

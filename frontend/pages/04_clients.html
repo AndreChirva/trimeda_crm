@@ -1,0 +1,49 @@
+<!-- Страница: Клиенты (clients) -->
+
+<!-- Шапка управления клиентами -->
+<div class="container-fluid pt-4 pb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="p-4 bg-white d-flex flex-column flex-md-row align-items-md-center justify-content-between shadow-sm" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(27, 94, 32, 0.03) !important; border-left: 5px solid #2E7D32;">
+                <div class="d-flex align-items-center mb-3 mb-md-0">
+                    <div class="p-3 mr-3 rounded-circle d-flex align-items-center justify-content-center" style="background-color: #E8F5E9; color: #2E7D32; width: 52px; height: 52px;">
+                        <i class="fas fa-home fa-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="mb-1" style="color: #212121; font-weight: 700; font-size: 1.8rem; letter-spacing: -0.5px;">Клиенты</h1>
+                        <p class="text-muted mb-0 small" style="letter-spacing: 0.3px;">База заказчиков, владельцев участков и партнёров студии</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#" class="btn btn-success as-form-modal" 
+                       data-code="tm_clientForm" data-itemid="0" 
+                       style="background-color: #2E7D32; border: none; height: 42px; padding: 0 20px; font-weight: 600; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(46,125,50,0.15); transition: all 0.2s; color: #ffffff !important;">
+                        <i class="fas fa-plus"></i> Добавить клиента
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Таблица клиентов -->
+<div class="container-fluid py-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="as-table" 
+                 data-code="tm_clients"
+                 data-entity="clients"
+                 data-removebtnicon="fa fa-trash-alt"
+                 data-removebtnclass="btn-custom-delete"
+                 data-filterbtnicon="fa fa-search"
+                 data-filterbtnclass="btn-custom-filter"
+                 data-createbtnicon="fa fa-plus"
+                 data-createbtnclass="btn-custom-create"
+                 data-tableclass="table table-hover table-borderless"
+                 data-titleclass="h4 font-weight-bold"
+                 data-resetfilterbtnclass="btn crm-reset-btn"
+                 data-subtitleclass="text-muted">
+            </div>
+        </div>
+    </div>
+</div>

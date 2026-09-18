@@ -2,7 +2,7 @@
 
 **Статус:** 🚧 В активной разработке  
 **Стек:** MS SQL Server, T-SQL, HTML5, CSS3, JavaScript, Python, REST API, Docker  
-**Роль:** SQL-разработчик / Разработчик T-SQL (Backend)  
+**Роль:** SQL-разработчик / Разработчик T-SQL (Backend + Frontend)  
 **Период:** 2025 — настоящее время  
 **Сайт:** https://trimedaland.ru/
 
@@ -41,12 +41,13 @@
 - ✅ Мультитенантность через `tenant_id`
 - ✅ Мягкое удаление (`deleted_at`)
 - ✅ Аудит и история изменений
-- ✅ Хранимые процедуры CRUD для клиентов, проектов, сотрудников, каталога
+- ✅ Хранимые процедуры CRUD (62 процедуры)
 - ✅ Динамические словари (`*_dict`)
 - ✅ Дашборды и аналитика
 - ✅ Формы (HTML + CSS + JS)
 - ✅ Страницы (HTML + CSS + JS)
 - ✅ Индексы под фильтры и сортировки
+- ✅ Дизайн-система (зелёная палитра, премиум-карточки)
 
 ## Что в разработке
 
@@ -56,6 +57,29 @@
 - 🚧 Календарь садовода
 - 🚧 API Росреестра (кадастр)
 - 🚧 Синхронизация с 1С
+
+---
+
+## Структура репозитория
+
+trimeda-crm/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── docs/
+│ ├── business-process.md
+│ └── roles.md
+├── sql/
+│ ├── schema/ # 14 файлов: ядро, клиенты, проекты, каталог...
+│ ├── indexes/ # все IX и UQ
+│ └── procedures/ # 7 файлов: 62 процедуры
+└── frontend/
+├── pages/ # 5 страниц
+├── forms/ # 4 файла: формы
+├── css/ # crm.css
+└── js/ # date_mask.js
+
+text
 
 ---
 
@@ -87,23 +111,22 @@
 
 ### Страницы
 
-| Страница | Что показывает |
+| Страница | Файл |
 |---|---|
-| Dashboard | Виджеты, формы, дашборд |
-| Команда | Таблица сотрудников, фильтры |
-| Проекты | Реестр проектов, статистика |
-| Клиенты | База клиентов |
-| Каталог | Растения, материалы, услуги |
+| Dashboard | `frontend/pages/01_dashboard.html` |
+| Команда | `frontend/pages/02_team.html` |
+| Проекты | `frontend/pages/03_projects.html` |
+| Клиенты | `frontend/pages/04_clients.html` |
+| Каталог | `frontend/pages/05_catalog.html` |
 
 ### Формы
 
-| Форма | Что показывает |
+| Форма | Файл |
 |---|---|
-| Сотрудник | Создание/редактирование |
-| Клиент | Создание/редактирование |
-| Проект | Создание/редактирование |
-| Каталог | Позиция каталога |
-| Карточки | Просмотр |
+| Сотрудник | `frontend/forms/01_employee.html` |
+| Клиент | `frontend/forms/02_client.html` |
+| Проект | `frontend/forms/03_project.html` |
+| Каталог | `frontend/forms/04_catalog.html` |
 
 ### Дизайн-система
 
@@ -117,20 +140,62 @@
 
 ### Особенности
 
-- **Адаптивность:** grid + flex, media queries
-- **Премиум-карточки:** градиенты, тени, hover-эффекты
-- **Кастомные фильтры:** зелёные поля с иконками
-- **Модальные окна:** формы в одну строку (label + input)
-- **Маска дат:** JS для `дд.мм.гггг`
+- Адаптивность: grid + flex, media queries
+- Премиум-карточки: градиенты, тени, hover-эффекты
+- Кастомные фильтры: зелёные поля с иконками
+- Модальные окна: формы в одну строку (label + input)
+- Маска дат: JS для `дд.мм.гггг`
 
 ---
 
 ## Технические решения
 
 ### 1. Мультитенантность
-
 ```sql
 SELECT @tenant_id = tu.tenant_id
 FROM tm_users tu
 INNER JOIN as_users au ON tu.email = au.email
 WHERE au.username = @username;
+2. Динамические словари
+sql
+select ... where id = @catalogID
+union
+select ... where id <> @catalogID
+order by sort_group, sort_order
+3. Пагинация
+#ids + OFFSET/FETCH + отдельный COUNT(*)
+
+4. Транзакции
+BEGIN TRANSACTION + TRY/CATCH + ROLLBACK
+
+5. Каскадное удаление тенанта
+Удаление всей компании при удалении собственника
+
+Примеры процедур
+Процедура	Что показывает
+crud_tm_projects_getItems	Фильтры, пагинация, HTML
+dashboard_tm_projects_stats_getCounters	Агрегаты, метрики
+fm_tm_employeeForm_saveItem	Транзакция, хеширование
+crud_tm_employees_deleteItem	Каскадное удаление
+fm_tm_catalogForm_checkItem	Валидация бизнес-правил
+Что я делал
+Проектирование логической и физической модели БД
+
+Разработка хранимых процедур, функций, триггеров
+
+Оптимизация запросов: планы, индексы, блокировки
+
+Построение витрин данных и отчётности
+
+Интеграция с REST API
+
+ETL/ELT на Python
+
+Разработка frontend (HTML/CSS/JS)
+
+Ссылки
+Сайт: https://trimedaland.ru/
+
+GitHub: https://github.com/AndreChirva
+
+
